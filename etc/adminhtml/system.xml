@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="oderco" translate="label" sortOrder="10" class="oderco-tab">
+            <label>Oderco</label>
+        </tab>
+        <section id="dayoffer" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Day Offer</label>
+            <tab>oderco</tab>
+            <resource>Oderco_DayOffer::dayoffer_config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Active module</label>
+                <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="duration_time" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Duration Time</label>
+                    <source_model>Oderco\DayOffer\Model\Config\Source\Times</source_model>
+                </field>
+
+                <field id="button_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Button Text</label>
+                </field>
+
+                <field id="product_list" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Product List</label>
+                    <source_model>Oderco\DayOffer\Model\Config\ProductList</source_model>
+                </field>
+                <field id="date_init" translate="label" sortOrder="10"
+                       type="date" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Date for init offer</label>
+                    <frontend_model>Oderco\DayOffer\Block\Adminhtml\DateTime</frontend_model>
+                </field>
+
+                <field id="custom_css" translate="label"
+                       type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Custom CSS inline</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

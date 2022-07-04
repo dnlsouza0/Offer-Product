@@ -1,0 +1,42 @@
+.block-offer{
+    &:hover{
+        .block-info-prod{
+            display: block;
+        }
+    }
+    .btn-offer{
+        height: 30px;
+        cursor: pointer;
+        position: relative;
+    }
+    .block-info-prod{
+        display: none;
+        position: absolute;
+        z-index: 9;
+        background-color: white;
+        min-width: 180px;
+        padding: 10px;
+        top: -50%;
+        left: 100%;
+        a {
+            text-decoration: none;
+        }
+        .block-info{
+            padding: 10px;
+            color: black;
+            .title-prod{
+                font-size: 20px;
+                color: black;
+            }
+            .sku{
+                span{
+                    font-weight: bold;
+                }
+            }
+            .price {
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+    }
+}

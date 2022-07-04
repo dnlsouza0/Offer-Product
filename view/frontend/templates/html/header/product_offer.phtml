@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block \Magento\Catalog\Block\Product\View*/
+?>
+
+<?php if ($block->moduleIsEnable() && $block->initOffer()): ?>
+    <?php
+    $product = $block->getProduct();
+    ?>
+    <div class="block-offer">
+        <div class="btn-offer">
+            <?= __($block->getBtnText()); ?>
+
+            <div class="modal-offer block-info-prod">
+                <a href="<?= $this->getUrl() . $product->getUrlKey() . ".html"; ?>">
+                    <div class="block-img">
+                        <img class="img-prod-offer" src="<?= $this->getUrl() . 'media/catalog/product' . $product->getImage(); ?>" />
+                    </div>
+                    <div class="block-info">
+                        <p class="title-prod"> <?= $product->getName(); ?></p>
+                        <p class="sku"> <span> <?= __('Code:') ?> </span> <?= $product->getSku(); ?> </p>
+
+                        <p class="price">
+                            <span> <?= $block->getCurrencySymbol(); ?> </span>
+                            <span> <?= $product->getFinalPrice(); ?> </span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        <?= $block->getCustomCss(); ?>
+    </style>
+
+<?php endif; ?>
